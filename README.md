@@ -1,6 +1,6 @@
-# Trading Bot Demo
+Oct21:
 
-/
+- I'm gonna delete a lot of stuff about truffle and ganache since I think hardhat does everything that those imports do.
 
 ## Technology Stack & Tools
 
@@ -154,7 +154,7 @@ This error occurs in the _determineProfitability()_ function inside of _bot.js_.
 ## Using other EVM chains
 
 If you are looking to test on an EVM compatible chain, you can follow these steps:
-    
+
 ### 1. Update .env
 
 - **ARB_FOR=""**
