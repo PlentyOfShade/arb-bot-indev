@@ -1,6 +1,6 @@
 {
   "PROJECT_SETTINGS": {
-    "isLocal": false,
+    "isLocal": true,
     "isDeployed": true
   },
   "UNISWAP": {

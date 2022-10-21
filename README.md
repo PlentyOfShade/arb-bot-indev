@@ -1,50 +1,43 @@
 Oct21:
 
 - I'm gonna delete a lot of stuff about truffle and ganache since I think hardhat does everything that those imports do.
+- I used npm uninstall ganache and truffle
+
+  To-Do:
+
+- Make and connect my own node instead of using Alchemy node provider
+- Connect to DEX, Chains, Tokens of my choice
+- Test in a hardhat fork
+- Connect to a, hopefully free, cloud hosting provider
+- Maybe migrate web3 import usage to hardhatweb3
+- Maybe try to make instances of an HDwallet using hardhat instead of @truffle/hdwallet-provider
 
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contract)
 - Javascript (React & Testing)
 - [Web3](https://web3js.readthedocs.io/en/v1.5.2/) (Blockchain Interaction)
-- [Truffle](https://trufflesuite.com/docs/truffle/) (Development Framework)
-- [Ganache-CLI](https://github.com/trufflesuite/ganache) (For Local Blockchain)
+- hardhat
 - [Alchemy](https://www.alchemy.com/) (For forking the Ethereum mainnet)
 
 ## Requirements For Initial Setup
 
 - Install [NodeJS](https://nodejs.org/en/), I recommend using node version 16.14.2 to avoid any potential dependency issues
-- Install [Truffle](https://github.com/trufflesuite/truffle), In your terminal, you can check to see if you have truffle by running `truffle --version`. To install truffle run `npm i -g truffle`.
-- Install [Ganache-CLI](https://github.com/trufflesuite/ganache). To see if you have ganache-cli installed, in your command line type `ganache --version`. To install, in your command line type `npm install ganache --global`
+- Install hardhat
 
 ## Setting Up
 
 ### 1. Clone/Download the Repository
 
+- git clone https://github.com/PlentyOfShade/arb-bot-indev
+
 ### 2. Install Dependencies:
 
 `$ npm install`
 
-### 3. Start Ganache CLI
+### 3. Start Hardhat CLI
 
-In your terminal run:
-
-```
-ganache -f -m <Your-Mnemonic-Phrase> -u 0xdEAD000000000000000042069420694206942069 -p 7545
-```
-
-Alternatively you can start ganache with your own RPC URL such as the one provided from Alchemy:
-
-```
-ganache -f wss://eth-mainnet.alchemyapi.io/v2/<Your-App-Key> -m <Your-Mnemonic-Phrase> -u 0xdEAD000000000000000042069420694206942069 -p 7545
-```
-
-For the -m parameter you can get away by using a 1 word mnemonic, remember these are only development accounts and are not to be used in production.
-
-For the -u parameter in the command, we are unlocking an address with SHIB tokens to manipulate price of SHIB/WETH in our scripts. If you
-plan to use a different ERC20 token, you'll need to unlock an account holding that specific ERC20 token.
-
-Once you've started ganache-cli, copy the address of the first account as you'll need to paste it in your .env file in the next step.
+Idk how to do this yet, I think hardhat has a built-in plugin like ganache.
 
 ### 4. Create and Setup .env
 
@@ -62,7 +55,8 @@ Before running any scripts, you'll want to create a .env file with the following
 ### 5. Migrate Smart Contracts
 
 In a seperate terminal run:
-`$ truffle migrate --reset`
+
+- What is the hardhat command for this?
 
 ### 6. Start the Bot
 
@@ -185,3 +179,14 @@ You may also need to change the flashloan provider used in the contract to one t
 
 - When starting ganache CLI, you'll want to fork using your chain's RPC URL and perhaps update the address of the account you want to unlock.
 - If testing out the _manipulatePrice.js_ script, you'll also want to update the **UNLOCKED_ACCOUNT** variable and adjust **AMOUNT** as needed.
+
+Warnings:
+
+- I get this after compiling:Warning:
+  SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+  --> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
+
+Errors:

@@ -1,8 +1,9 @@
 require("dotenv").config();
 const config = require("../config.json");
+//I think i need the hardhat version of truffles hd wallet provider and the import for it used to be here
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
-const Web3 = require("web3");
+const { Web3 } = require("hardhat");
 let web3;
 
 if (!config.PROJECT_SETTINGS.isLocal) {
@@ -15,6 +16,7 @@ if (!config.PROJECT_SETTINGS.isLocal) {
 } else {
   web3 = new Web3("ws://127.0.0.1:7545");
 }
+//might need to change this in accordance to hardhat for tests^
 
 const IUniswapV2Router02 = require("@uniswap/v2-periphery/build/IUniswapV2Router02.json");
 const IUniswapV2Factory = require("@uniswap/v2-core/build/IUniswapV2Factory.json");
