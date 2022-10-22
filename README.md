@@ -41,8 +41,9 @@ Idk how to do this yet, I think hardhat has a built-in plugin like ganache.
 
 ### 4. Create and Setup .env
 
-Before running any scripts, you'll want to create a .env file with the following values (see .env.example):
+Before running any scripts, you'll want to create a .env file with the following values:
 
+- **ALCHEMY_MAINNET_RPC_URL=""**
 - **ALCHEMY_API_KEY=""**
 - **ARB_FOR="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"** (By default we are using WETH)
 - **ARB_AGAINST="0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE"** (By default we are using SHIB)

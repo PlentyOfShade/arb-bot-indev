@@ -1,6 +1,5 @@
 // -- HANDLE INITIAL SETUP -- //
-
-require("web3-utils");
+require("hardhat");
 require("./helpers/server");
 require("dotenv").config();
 
