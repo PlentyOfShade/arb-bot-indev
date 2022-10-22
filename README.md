@@ -1,15 +1,9 @@
-Oct21:
-
-- I'm gonna delete a lot of stuff about truffle and ganache since I think hardhat does everything that those imports do.
-- I used npm uninstall ganache and truffle
-
-  To-Do:
+To-Do:
 
 - Make and connect my own node instead of using Alchemy node provider
 - Connect to DEX, Chains, Tokens of my choice
 - Test in a hardhat fork
-- Connect to a, hopefully free, cloud hosting provider
-- Maybe migrate web3 import usage to hardhatweb3
+- Connect to a, hopefully free, cloud hosting provider for bot and possibly node
 - Maybe try to make instances of an HDwallet using hardhat instead of @truffle/hdwallet-provider
 
 ## Technology Stack & Tools
@@ -35,11 +29,7 @@ Oct21:
 
 `$ npm install`
 
-### 3. Start Hardhat CLI
-
-Idk how to do this yet, I think hardhat has a built-in plugin like ganache.
-
-### 4. Create and Setup .env
+### 3. Create and Setup .env
 
 Before running any scripts, you'll want to create a .env file with the following values:
 
@@ -52,6 +42,10 @@ Before running any scripts, you'll want to create a .env file with the following
 - **UNITS=0** (Only used for price reporting)
 - **GAS_LIMIT=600000** (Currently a hardcoded value, may need to adjust during testing)
 - **GAS_PRICE=0.0093** (Currently a hardcoded value, may need to adjust during testing)
+
+### 4. Compile with hardhat
+
+npx hardhat compile
 
 ### 5. Migrate Smart Contracts
 
