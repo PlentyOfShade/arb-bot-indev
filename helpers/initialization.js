@@ -1,9 +1,9 @@
 require("dotenv").config();
 const config = require("../config.json");
-//I think i need the hardhat version of truffles hd wallet provider and the import for it, don't know how to dod that yet
+//I think i want the hardhat version of truffles hd wallet provider and the import for it(likely using ethers.js).
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-
 const { Web3 } = require("hardhat");
+
 let web3;
 
 if (!config.PROJECT_SETTINGS.isLocal) {

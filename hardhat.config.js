@@ -44,4 +44,7 @@ module.exports = {
     cache: "./cache",
     artifacts: "./artifacts",
   },
+  // mocha: {
+  //   timeout: 40000
+  // }
 };

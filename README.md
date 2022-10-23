@@ -4,7 +4,9 @@ To-Do:
 - Connect to DEX, Chains, Tokens of my choice
 - Test in a hardhat fork
 - Connect to a, hopefully free, cloud hosting provider for bot and possibly node
+- Use hardhats ethers.js plugin instead of the ethers project plugins
 - Maybe try to make instances of an HDwallet using hardhat instead of @truffle/hdwallet-provider
+- Might want to migrate all web3.js use cases over to ether.js if possible and reasonable. Probably not though since so much of the project uses web3.js but i think i want to use ethers.js for things I further add and on other projects.
 
 ## Technology Stack & Tools
 
@@ -177,11 +179,13 @@ You may also need to change the flashloan provider used in the contract to one t
 
 Warnings:
 
-- I get this after compiling:Warning:
+- I get this after compiling:
+  Warning:
   SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
   --> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol
+  Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+  --> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
 
-Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
---> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
+- I am still a little confused about what should be a devdependency or a dependency so if having future errors that could be a source.
 
 Errors:
