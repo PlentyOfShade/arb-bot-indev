@@ -2,7 +2,7 @@
 pragma solidity <=0.8.10;
 
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; //What does the IERC20.sol contract do and why are we interacting with it?
 
 interface Structs {
     struct Val {
@@ -153,8 +153,8 @@ contract Arbitrage is DyDxFlashLoan {
     address public owner;
 
     constructor(address _sRouter, address _uRouter) {
-        sRouter = IUniswapV2Router02(_sRouter); // Sushiswap
-        uRouter = IUniswapV2Router02(_uRouter); // Uniswap
+        sRouter = IUniswapV2Router02(_sRouter); // Sushiswap - Second dex?
+        uRouter = IUniswapV2Router02(_uRouter); // Uniswap - First dex?
         owner = msg.sender;
     }
 

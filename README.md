@@ -1,4 +1,4 @@
-To-Do:
+## To-Do:
 
 - Make and connect my own node instead of using Alchemy node provider
 - Connect to DEX, Chains, Tokens of my choice
@@ -7,13 +7,23 @@ To-Do:
 - Use hardhats ethers.js plugin instead of the ethers project plugins
 - Maybe try to make instances of an HDwallet using hardhat instead of @truffle/hdwallet-provider
 - Might want to migrate all web3.js use cases over to ether.js if possible and reasonable. Probably not though since so much of the project uses web3.js but i think i want to use ethers.js for things I further add and on other projects.
+- how do i deploy my version of Arbitrage.sol and do i need to?
+
+## Future Directions & Optimizations
+
+- Make sure there is an automated adjusted gas offering system like metamask, not just hardcoded value
+- Verify if things like onlyowner() or other modifiers are being used in this project to protect our funds. Ensure access level protections.
+- What are the receive functions that are built into these contracts defined as and are they secure? Contracts have some built in functions that they all share and check for such as receive, constructor, etc.
+- Find out what needs to be changed in Arbitrage.sol when changing strategy.
+- Look into how bot.js is interacting with the Pair class. Specifically is it more like web2 or web3? Is my code trying to swap constantly? What are the gas consequences of how the bot is written? Recall when first testing i received receipts saying i lost gas in a transaction but my wallet wasn't even connected and i think the contract wasn't even deployed.
 
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contract)
 - Javascript (React & Testing)
+- Hardhat - add link
+- Ethers - add link
 - [Web3](https://web3js.readthedocs.io/en/v1.5.2/) (Blockchain Interaction)
-- hardhat
 - [Alchemy](https://www.alchemy.com/) (For forking the Ethereum mainnet)
 
 ## Requirements For Initial Setup
@@ -57,7 +67,7 @@ In a seperate terminal run:
 
 ### 6. Start the Bot
 
-`$ node ./bot.js`
+`$ node bot.js`
 
 ### 7. Manipulate Price
 
@@ -174,10 +184,10 @@ You may also need to change the flashloan provider used in the contract to one t
 
 ### Additional Notes
 
-- When starting ganache CLI, you'll want to fork using your chain's RPC URL and perhaps update the address of the account you want to unlock.
+- When starting hardhat (previously Ganache CLI), you'll want to fork using your chain's RPC URL and perhaps update the address of the account you want to unlock.
 - If testing out the _manipulatePrice.js_ script, you'll also want to update the **UNLOCKED_ACCOUNT** variable and adjust **AMOUNT** as needed.
 
-Warnings:
+## Warnings:
 
 - I get this after compiling:
   Warning:
@@ -187,5 +197,6 @@ Warnings:
   --> @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
 
 - I am still a little confused about what should be a devdependency or a dependency so if having future errors that could be a source.
+- In initialization.js the interface for the arbitrage contract at the bottom of the file might cause an error from how its configured/formatted when we deploy bot and contract together. We are not sure if we need to pass the network address as a parameter.
 
-Errors:
+## Active Errors:

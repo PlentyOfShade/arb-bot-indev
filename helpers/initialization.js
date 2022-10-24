@@ -41,7 +41,7 @@ const sRouter = new web3.eth.Contract(
 const IArbitrage = require("../artifacts/contracts/Arbitrage.sol/Arbitrage.json");
 const arbitrage = new web3.eth.Contract(
   IArbitrage.abi
-  // IArbitrage.networks[1].address
+  // IArbitrage.networks[1].address     //This could be a further error when we try to deploy contract and bot together
 );
 
 module.exports = {
